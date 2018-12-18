@@ -50,7 +50,7 @@ FreeDraw.onMouseUp = function (state, e){
         console.log(tolerance)
         simplify(state.polygon, {
             mutate: false,
-            tolerance: tolerance,
+            tolerance: 1,
             highQuality: true
         });
             
