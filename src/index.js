@@ -46,7 +46,7 @@ FreeDraw.onMouseUp = function (state, e){
     if (state.dragMoving) {
         var tolerance = (3 / ((this.map.getZoom()-4) * 150)) - 0.001 // https://www.desmos.com/calculator/b3zi8jqskw
         simplify(state.polygon, {
-            mutate: true,
+            mutate: false,
             tolerance: tolerance,
             highQuality: true
         });
