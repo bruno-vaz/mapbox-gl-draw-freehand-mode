@@ -7,6 +7,7 @@ import simplify from "@turf/simplify";
 const FreeDraw = DrawPolygon;
 
 FreeDraw.onSetup = function() {
+    console.log('Bruno Vaz fork')
     const polygon = this.newFeature({
         type: Constants.geojsonTypes.FEATURE,
         properties: {},
@@ -45,6 +46,8 @@ FreeDraw.onDrag = FreeDraw.onTouchMove = function (state, e){
 FreeDraw.onMouseUp = function (state, e){
     if (state.dragMoving) {
         var tolerance = (3 / ((this.map.getZoom()-4) * 150)) - 0.001 // https://www.desmos.com/calculator/b3zi8jqskw
+        console.log('tolerance')
+        console.log(tolerance)
         simplify(state.polygon, {
             mutate: false,
             tolerance: tolerance,
